@@ -13,7 +13,7 @@ export default async function infoDetails({ params, }: { params: {slug: string};
     return (
         <div className="flex items-center">
             <Image 
-              src={pokemon.sprites.front_shiny}
+              src={pokemon.sprites.front_default}
               width={80}
               height={80}
               alt={pokemon.name}

@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link';
 
 export default async function Home() {
-  const response = await fetch('https://pokeapi.co/api/v2/pokemon');
+  const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1010&offset=0');
   const { results: pokemons } = await response.json();
 
   return (
@@ -10,7 +10,7 @@ export default async function Home() {
       <h2 className='text-2xl mb-4 font-bold'>
         Pokemons
       </h2>
-      <div className='flex flex-wrap gap-3'>
+      <div className='flex flex-wrap gap-6'>
         {pokemons.map((pokemon: any) => (
           <Link
             className='group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30'
